@@ -1,25 +1,16 @@
-var charactersLength = prompt("How many characters do you want your password to be (please answer in whole numbers greater the 8 and less the 128)");
+var charList="abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ!#$%&*+,-./:;<=>?@\\^_"
+    var temp=''
 
-var values = "ABCDEFGHIJKLMNOPQRSTUVWZYZabcdefghijklmnopqrstuvwxyz1234567890!@#$%^&*()_+";
-
-if(charactersLength >= 8 && charactersLength <= 128){
-  var upperCase = confirm("would you like upper case characters in your password")
-  var lowerCase = confirm("would you like lower case characters in your password")
-  var numberCase = confirm("would you like numbers characters in your password")
-  var specialCase= confirm("would you like Special characters in your password")
-}
-else{
-   alert("please answer first question correctly")
-  }
-
-
-if(upperCase===true){
-  
-}
-else{
-  alert("Please pick one of the previous options")
-}
-
+// i had  some trouble using the math.floor and math random
+    function generatepass(charLength){
+      temp=''
+      for (i=0; i < charLength; i++)
+      temp+=charList.charAt(Math.floor(Math.random()*charList.length))
+      return temp
+    }
+    function populateform(enterlength){
+      document.passwordGenerator.output.value = generatepass(enterlength)
+    }
 
 
 

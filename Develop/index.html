@@ -9,17 +9,8 @@
   </head>
   <body>
 
-
-    <form name ="passwordGenerator">
-      <input type="text" name="output">
-      <input type= "button" value= "Generate Password" onClick ="populateform(this.form.thelength.value)">
-      <div>
-        <strong>Password Size</strong> <input type="text" name="thelength" value = 8>
-      </div>
-    </form>
-
-
-    <!-- <div class="wrapper">
+<!-- i had some issues making the real generate button work so i had to make a form instead. to see if it would collect user information. also i didnt know how to separate the special keys from the numbers and the alpabetic keys -->
+  <div class="wrapper">
       <header>
         <h1>Password Generator</h1>
       </header>
@@ -34,25 +25,19 @@
             placeholder="Your Secure Password"
             aria-label="Generated Password"
           ></textarea>
+          <form name ="passwordGenerator">
+            <input type="text" name="output">
+            <input type= "button" value= "Generate Password" onClick ="populateform(this.form.thelength.value)">
+            <div>
+              <strong>Password Size</strong> <input type="text" name="thelength" value = 10 min=8 max=128>
+            </div>
+          </form>
         </div>
         <div class="card-footer">
           <button id="generate" class="btn">Generate Password</button>
         </div>
-      </div> -->
+      </div>
     </div>
-    <script>
-    var charList="abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ!#$%&*+,-./:;<=>?@\\^_"
-    var temp=''
-
-    function generatepass(charLength){
-      temp=''
-      for (i=0; i < charLength; i++)
-      temp+=charList.charAt(Math.floor(Math.random()*charList.length))
-      return temp
-    }
-    function populateform(enterlength){
-      document.passwordGenerator.output.value = generatepass(enterlength)
-    }
-    </script>
+    <script src="script.js"></script>
   </body>
 </html>
